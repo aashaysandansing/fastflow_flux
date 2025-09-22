@@ -1,6 +1,6 @@
 # FastFlow with Bandit Inference (Flux-dev Extension)
 
-This repository contains an implementation of ideas from the paper **["FastFlow: Accelerating the Generative Flow Matching Models with Bandit Inference"]**, adapted for the **Flux-dev** model.  
+This repository contains an implementation of ideas from the paper **"FastFlow: Accelerating the Generative Flow Matching Models with Bandit Inference"**, adapted for the **Flux-dev** model.  
 
 ## Key Updates  
 The main modifications are in:  
