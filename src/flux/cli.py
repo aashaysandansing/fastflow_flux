@@ -8,7 +8,7 @@ import torch
 from fire import Fire
 from transformers import pipeline
 
-from flux.sampling import denoise, get_noise, get_schedule, prepare, unpack
+from flux.sampling import UCB1Bandit, denoise_with_ucb, denoise, get_noise, get_schedule, prepare, unpack
 from flux.util import (
     check_onnx_access_for_trt,
     configs,
@@ -261,7 +261,7 @@ def main(
             model = model.to(torch_device)
 
         # denoise initial noise
-        x = denoise(model, **inp, timesteps=timesteps, guidance=opts.guidance)
+        x = denoise_with_ucb(model, **inp, timesteps=timesteps, guidance=opts.guidance)
 
         # offload model, load autoencoder to gpu
         if offload:
